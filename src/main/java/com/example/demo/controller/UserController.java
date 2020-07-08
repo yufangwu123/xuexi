@@ -51,8 +51,8 @@ public class UserController {
      * @return
      */
     @RequestMapping("delete")
-    public Map delete(){
-
+    public Map delete(String id ){
+        Boolean delete =userService.removeById(id);
         return null;
     }
 
