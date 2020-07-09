@@ -33,7 +33,7 @@ spring:
       max-pool-prepared-statement-per-connection-size: 20
 #mybatis-plus配置
 mybatis-plus:
-  mapper-locations: classpath:/com/cy/gas_mini/mapper/mapping/*Mapper.xml
+  mapper-locations: classpath:/com/example/demo/mapper/mapping/*Mapper.xml
   type-aliases-package: com.example.demo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
