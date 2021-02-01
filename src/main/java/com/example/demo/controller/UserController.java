@@ -4,7 +4,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.demo.annotation.RemoteInterface;
+import com.example.demo.annotation.RemotePar;
 import com.example.demo.entity.User;
+import com.example.demo.enums.MethodEnum;
+import com.example.demo.inter.BaseInterface;
 import com.example.demo.result.ResultMap;
 import com.example.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,6 +67,12 @@ public class UserController {
 
     }
 
+    @RequestMapping("insertTwo")
+    @RemoteInterface
+    public void insertTwo(User user){
+        MethodEnum methodEnum =MethodEnum.valueOfCode(user.getCode());
+        methodEnum.getBaseInterface().insert(user);
+    }
     /**
      * 删除
      *

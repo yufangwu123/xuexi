@@ -26,6 +26,9 @@ public class User implements Serializable {
 
     private String userName;
 
+    private String code;
+
+
     public String getUserName() {
         return userName;
     }
