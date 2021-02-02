@@ -103,11 +103,11 @@ public class UserController {
      * @return
      */
     @RequestMapping("findByPage")
-    public Map findByPage(@RequestParam("pages") int pages) {
+    public List<User> findByPage(int pages) {
         Page<User> page = new Page<>(pages, 5);  //假设每页显示五个用户
         IPage<User> userIPage = userService.page(page);
         List<User> records = userIPage.getRecords();
         records.forEach(System.out::println);
-        return ResultMap.buildSuccessResult("查询成功", records);
+        return records;
     }
 }
