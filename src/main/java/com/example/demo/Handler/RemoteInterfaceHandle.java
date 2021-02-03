@@ -3,8 +3,7 @@ package com.example.demo.Handler;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.annotation.RemoteInterface;
-import com.example.demo.annotation.RemotePar;
-import com.example.demo.enums.EntityEmum;
+import com.example.demo.enums.EntityEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -46,8 +45,8 @@ public class RemoteInterfaceHandle {
             // 注入调用方法参数
             // 1. 获取调用方法上的参数列表注解
             JSONObject jsonObject =JSON.parseObject(reqData);
-            EntityEmum entityEmum =EntityEmum.valueOfCode(jsonObject.getString("code"));
-            args[0] = JSON.parseObject(reqData,entityEmum.getaClass());
+            EntityEnum entityEnum = EntityEnum.valueOfCode(jsonObject.getString("code"));
+            args[0] = JSON.parseObject(reqData, entityEnum.getBaseUser().getClass());
         }
         return joinPoint.proceed(args);
     }

@@ -42,17 +42,17 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 
-    /**
-     * todo 允许跨域设置
-     */
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*")
-                .allowCredentials(true)
-                .allowedMethods("*")
-                .maxAge(3600);
-    }
+//    /**
+//     * todo 允许跨域设置
+//     */
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry) {
+//        registry.addMapping("/**")
+//                .allowedOrigins("*")
+//                .allowCredentials(true)
+//                .allowedMethods("*")
+//                .maxAge(3600);
+//    }
 
 
 

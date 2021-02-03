@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+
+import com.example.demo.inter.BaseInterface;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -18,7 +20,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User implements Serializable {
+public class User implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -27,6 +29,10 @@ public class User implements Serializable {
     private String userName;
 
     private String code;
+
+    private String age;
+
+    private String sex;
 
 
     public String getUserName() {
@@ -47,5 +53,27 @@ public class User implements Serializable {
 
     private String passWord;
 
+    public String getCode() {
+        return code;
+    }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 }

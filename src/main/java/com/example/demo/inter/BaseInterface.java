@@ -1,8 +1,15 @@
 package com.example.demo.inter;
 
-import com.example.demo.entity.User;
+import com.example.demo.config.Config;
+import com.example.demo.convert.UserBo;
+import com.example.demo.convert.UserDto;
 
 public interface BaseInterface {
 
-    public void insert(User user);
+     void insert(Config config);
+
+     void insert(Config config, UserDto userDto);
+
+     void insert(Config config, UserBo userBo);
+
 }

@@ -1,7 +1,7 @@
 package com.example.demo.inter;
 
 import com.example.demo.entity.User;
-import com.example.demo.entity.UserDto;
+import com.example.demo.convert.UserDto;
 
 public class YuInterface implements  BaseInterface {
 
