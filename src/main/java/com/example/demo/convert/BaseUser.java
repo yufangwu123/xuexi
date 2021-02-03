@@ -51,7 +51,6 @@ public class BaseUser {
         this.passWord = passWord;
     }
 
-    public void insert(Config config){
-
+    public void insert(){
     }
 }

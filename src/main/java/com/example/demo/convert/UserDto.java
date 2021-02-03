@@ -1,18 +1,17 @@
 package com.example.demo.convert;
 
-import com.example.demo.config.Config;
+import com.example.demo.remote.RemoteUtil;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
 
 @Data
-public class UserDto extends  AbstractUser{
+public class UserDto extends  BaseUser{
 
     private String age;
 
 
     @Override
-    public void insert(Config config){
-        super.insert(config,this);
+    public void insert(){
+        RemoteUtil.insert(this);
     }
 }

@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -9,10 +11,13 @@ import com.example.demo.config.Config;
 import com.example.demo.convert.BaseUser;
 import com.example.demo.entity.User;
 import com.example.demo.convert.UserDto;
+import com.example.demo.enums.EntityEnum;
+import com.example.demo.remote.RemoteUtil;
 import com.example.demo.result.ResultMap;
 import com.example.demo.service.IUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,6 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
+import java.util.jar.JarEntry;
 
 /**
  * <p>
@@ -71,7 +77,11 @@ public class UserController {
     @RemoteInterface
     public void insertTwo(BaseUser baseUser){
         Config config =new Config();
-        baseUser.insert(config);
+//        JSONObject jsonObject = JSON.parseObject(userStr);
+//        EntityEnum entityEnum =EntityEnum.valueOfCode(jsonObject.getString("code"));
+//        BaseUser baseUser = JSON.parseObject(userStr,entityEnum.getBaseUser().getClass());
+        RemoteUtil.setConfig(config);
+        baseUser.insert();
         User user =new User();
         BeanUtils.copyProperties(baseUser,user);
         userService.save(user);
