@@ -69,9 +69,10 @@ public class UserController {
     @RequestMapping("insertTwo")
     @RemoteInterface
     public void insertTwo(BaseUser baseUser){
-
         Config config =new Config();
+        baseUser.setUserService(userService);
         baseUser.insert(config);
+
     }
     /**
      * 删除

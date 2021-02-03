@@ -1,6 +1,8 @@
 package com.example.demo.convert;
 
 import com.example.demo.config.Config;
+import com.example.demo.service.IUserService;
+import com.example.demo.service.impl.UserServiceImpl;
 import lombok.Data;
 
 /**
@@ -45,5 +47,15 @@ public class BaseUser {
 
     public void insert(Config config){
 
+    }
+
+    IUserService userService;
+
+    public IUserService getUserService() {
+        return userService;
+    }
+
+    public void setUserService(IUserService userService) {
+        this.userService = userService;
     }
 }

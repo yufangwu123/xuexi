@@ -6,8 +6,6 @@ import com.example.demo.convert.UserDto;
 
 public interface BaseInterface {
 
-     void insert(Config config);
-
      void insert(Config config, UserDto userDto);
 
      void insert(Config config, UserBo userBo);
