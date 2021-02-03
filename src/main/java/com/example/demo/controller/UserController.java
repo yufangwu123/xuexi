@@ -9,7 +9,6 @@ import com.example.demo.config.Config;
 import com.example.demo.convert.BaseUser;
 import com.example.demo.entity.User;
 import com.example.demo.convert.UserDto;
-import com.example.demo.enums.MethodEnum;
 import com.example.demo.result.ResultMap;
 import com.example.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
