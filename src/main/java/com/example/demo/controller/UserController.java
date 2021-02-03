@@ -11,6 +11,7 @@ import com.example.demo.entity.User;
 import com.example.demo.convert.UserDto;
 import com.example.demo.result.ResultMap;
 import com.example.demo.service.IUserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -70,9 +71,10 @@ public class UserController {
     @RemoteInterface
     public void insertTwo(BaseUser baseUser){
         Config config =new Config();
-        baseUser.setUserService(userService);
         baseUser.insert(config);
-
+        User user =new User();
+        BeanUtils.copyProperties(baseUser,user);
+        userService.save(user);
     }
     /**
      * 删除

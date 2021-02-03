@@ -1,9 +1,14 @@
 package com.example.demo.convert;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.example.demo.config.Config;
+import com.example.demo.entity.User;
+import com.example.demo.mapper.UserMapper;
 import com.example.demo.service.IUserService;
 import com.example.demo.service.impl.UserServiceImpl;
-import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * @Description:
@@ -12,6 +17,7 @@ import lombok.Data;
  * @CreateTime: 2021/2/3 14:30
  * @UpdateTime:
  */
+
 public class BaseUser {
 
 
@@ -47,15 +53,5 @@ public class BaseUser {
 
     public void insert(Config config){
 
-    }
-
-    IUserService userService;
-
-    public IUserService getUserService() {
-        return userService;
-    }
-
-    public void setUserService(IUserService userService) {
-        this.userService = userService;
     }
 }

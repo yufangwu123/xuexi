@@ -3,6 +3,7 @@ package com.example.demo.convert;
 import com.example.demo.config.Config;
 import com.example.demo.entity.User;
 import com.example.demo.inter.BaseInterface;
+import com.example.demo.service.IUserService;
 import com.example.demo.service.impl.UserServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,23 +17,16 @@ import org.springframework.stereotype.Component;
  * @UpdateTime:
  */
 
-public  abstract class AbstractUser extends BaseUser implements BaseInterface  {
+public  abstract class AbstractUser extends BaseUser implements BaseInterface {
 
     @Override
     public void insert(Config config,UserDto userDto){
-        User user =new User();
-        BeanUtils.copyProperties(userDto,user);
-        userService.save(user);
         System.out.println("yufangwu");
-
     }
 
 
     @Override
     public void insert(Config config,UserBo userBo){
-        User user =new User();
-        BeanUtils.copyProperties(userBo,user);
-        userService.save(user);
         System.out.println("fangwu");
     }
 
